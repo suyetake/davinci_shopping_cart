@@ -49,6 +49,7 @@ group :development, :test do
   gem 'bcrypt'
   gem 'sqlite3'
   gem 'shoulda-matchers'
+  gem 'launchy'
 end
 
 group :development do
