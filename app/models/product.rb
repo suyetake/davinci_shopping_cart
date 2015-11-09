@@ -1,4 +1,3 @@
 class Product < ActiveRecord::Base
-
-  validates :quantity, :presence => { :if => }
+  has_many :line_items
 end

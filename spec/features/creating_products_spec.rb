@@ -10,7 +10,7 @@ feature "Products management" do
     fill_in "Price", :with => "5.25"
 
     click_button "Create"
-
+# page.has_content == true
     expect(page).to have_content("Product was successfully created.")
   end
 
@@ -34,7 +34,7 @@ feature "Products management" do
     visit "/products/#{product.id}"
     expect(page).to have_content(product.name)
     expect(page).to have_content(product.description)
-    expect(page).to have_content(product.image_url)
+    expect(page).to have_image(product.image_url)
     expect(page).to have_content(product.price)
   end
 
@@ -46,12 +46,12 @@ feature "Products management" do
 
     expect(page).to have_content(product.name)
     expect(page).to have_content(product.description)
-    expect(page).to have_content(product.image_url)
+    expect(page).to have_image(product.image_url)
     expect(page).to have_content(product.price)
 
     expect(page).to have_content(product2.name)
     expect(page).to have_content(product2.description)
-    expect(page).to have_content(product2.image_url)
+    expect(page).to have_image(product2.image_url)
     expect(page).to have_content(product2.price)
 
   end
@@ -64,12 +64,12 @@ feature "Products management" do
 
     expect(page).to have_content(product.name)
     expect(page).to have_content(product.description)
-    expect(page).to have_content(product.image_url)
+    expect(page).to have_image(product.image_url)
     expect(page).to have_content(product.price)
 
     expect(page).to_not have_content(product2.name)
     expect(page).to_not have_content(product2.description)
-    expect(page).to_not have_content(product2.image_url)
+    expect(page).to_not have_image(product2.image_url)
     expect(page).to_not have_content(product2.price)
   end
 end
